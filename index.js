@@ -12,5 +12,14 @@ function computerPlay() {
 }
 
 computerPlay();
-
 console.log(computerSelection);
+
+let userSelection;
+
+function userPlay() {
+    userSelection = prompt("Enter rock, paper, or scissors.");
+    userSelection = userSelection.toLowerCase();
+}
+
+userPlay();
+console.log(userSelection);
