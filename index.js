@@ -12,7 +12,6 @@ function computerPlay() {
 }
 
 computerPlay();
-console.log(computerSelection);
 
 let userSelection;
 
@@ -22,24 +21,36 @@ function userPlay() {
 }
 
 userPlay();
-console.log(userSelection);
 
-function declareWinner () {
+let announcement;
+
+function playRound() {
     if (userSelection == computerSelection) {
-        alert("It was a tie! You both played the same hand.");
-    } else if (userSelection == "rock" && computerSelection == "paper") {
-        alert("You lost! Paper beats rock.");
+        announcement = "It was a tie! You both played the same hand.";
+     } else if (userSelection == "rock" && computerSelection == "paper") {
+        announcement = "You lost! Paper beats rock.";
     } else if (userSelection == "rock" && computerSelection == "scissors") {
-        alert("You won! Rock beats scissors.");
+        announcement = "You won! Rock beats scissors.";
     } else if (userSelection == "paper" && computerSelection == "rock") {
-        alert("You won! Paper beats rock.");
+        announcement = "You won! Paper beats rock.";
     } else if (userSelection == "paper" && computerSelection == "scissors") {
-        alert("You lost! Scissors beats paper.");
+        announcement = "You lost! Scissors beats paper.";
     } else if (userSelection == "scissors" && computerSelection == "rock") {
-        alert("You lost! Rock beats scissors.");
+        announcement = "You lost! Rock beats scissors.";
     } else if (userSelection == "scissors" && computerSelection == "paper") {
-        alert("You won! Scissors beats paper.")
+        announcement = "You won! Scissors beats paper.";
     }
 }
 
-declareWinner();
+function game() {
+    for (let i = 0; i < 5; i++) {
+        computerPlay();
+        userPlay();
+        playRound();
+        console.log(userSelection);
+        console.log(computerSelection);
+        console.log(announcement);
+    }
+}
+
+game();
