@@ -1,16 +1,16 @@
-let computerResult;
+let computerSelection;
 
 function computerPlay() {
-    computerResult = Math.floor((Math.random() * 3) + 1);
-    if (computerResult == 1) {
-        computerResult = "Rock";
-    } else if (computerResult == 2) {
-        computerResult = "Paper";
+    computerSelection = Math.floor((Math.random() * 3) + 1);
+    if (computerSelection == 1) {
+        computerSelection = "Rock";
+    } else if (computerSelection == 2) {
+        computerSelection = "Paper";
     } else {
-        computerResult = "Scissors";
+        computerSelection = "Scissors";
     }
 }
 
 computerPlay();
 
-console.log(computerResult);
+console.log(computerSelection);
