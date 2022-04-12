@@ -70,7 +70,6 @@ function game() {
         console.log("Your Score: " + userScore);
         console.log("Computer Score: " + computerScore);
     }
-
     if (userScore === 3) {
         alert("Congratulations! You won the game!");
     } else {
