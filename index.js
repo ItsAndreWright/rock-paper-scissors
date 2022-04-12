@@ -19,7 +19,6 @@ function userPlay() {
 }
 
 function playRound() {
-
     if (userSelection === computerSelection) {
         alert("It was a tie! You both played the same hand.");
         return "tie";
@@ -55,7 +54,6 @@ function playRound() {
 }
 
 function game() {
-
     let userScore = 0;
     let computerScore = 0;
 
@@ -71,6 +69,12 @@ function game() {
         }
         console.log("Your Score: " + userScore);
         console.log("Computer Score: " + computerScore);
+    }
+
+    if (userScore === 3) {
+        alert("Congratulations! You won the game!");
+    } else {
+        alert("The computer won the game.");
     }
 }
 
