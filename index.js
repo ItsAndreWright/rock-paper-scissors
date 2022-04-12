@@ -11,8 +11,6 @@ function computerPlay() {
     }
 }
 
-computerPlay();
-
 let userSelection;
 
 function userPlay() {
@@ -20,36 +18,39 @@ function userPlay() {
     userSelection = userSelection.toLowerCase();
 }
 
-userPlay();
-
-let announcement;
-
 function playRound() {
+
     if (userSelection === computerSelection) {
-        announcement = "It was a tie! You both played the same hand.";
-     } else if (userSelection === "rock" && computerSelection === "paper") {
-        announcement = "You lost! Paper beats rock.";
-    } else if (userSelection === "rock" && computerSelection === "scissors") {
-        announcement = "You won! Rock beats scissors.";
-    } else if (userSelection === "paper" && computerSelection === "rock") {
-        announcement = "You won! Paper beats rock.";
-    } else if (userSelection === "paper" && computerSelection === "scissors") {
-        announcement = "You lost! Scissors beats paper.";
-    } else if (userSelection === "scissors" && computerSelection === "rock") {
-        announcement = "You lost! Rock beats scissors.";
-    } else if (userSelection === "scissors" && computerSelection === "paper") {
-        announcement = "You won! Scissors beats paper.";
+        alert("It was a tie! You both played the same hand.");
+     }
+     if (userSelection === "rock" && computerSelection === "paper") {
+        alert("You lost! Paper beats rock.");
+    }
+    if (userSelection === "rock" && computerSelection === "scissors") {
+        alert("You won! Rock beats scissors.");
+    }
+    if (userSelection === "paper" && computerSelection === "rock") {
+        alert("You won! Paper beats rock.");
+    }
+    if (userSelection === "paper" && computerSelection === "scissors") {
+        alert("You lost! Scissors beats paper.");
+    }
+    if (userSelection === "scissors" && computerSelection === "rock") {
+        alert("You lost! Rock beats scissors.");
+    }
+    if (userSelection === "scissors" && computerSelection === "paper") {
+        alert("You won! Scissors beats paper.");
+    }
+    if (userSelection != "rock" && userSelection != "paper" && userSelection != "scissors") {
+        alert("Invalid input.")
     }
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        computerPlay();
         userPlay();
+        computerPlay();
         playRound();
-        console.log(userSelection);
-        console.log(computerSelection);
-        console.log(announcement);
     }
 }
 
