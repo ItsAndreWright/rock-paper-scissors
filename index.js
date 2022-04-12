@@ -22,35 +22,55 @@ function playRound() {
 
     if (userSelection === computerSelection) {
         alert("It was a tie! You both played the same hand.");
+        return "tie";
      }
      if (userSelection === "rock" && computerSelection === "paper") {
         alert("You lost! Paper beats rock.");
+        return "computer";
     }
     if (userSelection === "rock" && computerSelection === "scissors") {
         alert("You won! Rock beats scissors.");
+        return "user";
     }
     if (userSelection === "paper" && computerSelection === "rock") {
         alert("You won! Paper beats rock.");
+        return "user";
     }
     if (userSelection === "paper" && computerSelection === "scissors") {
         alert("You lost! Scissors beats paper.");
+        return "computer";
     }
     if (userSelection === "scissors" && computerSelection === "rock") {
         alert("You lost! Rock beats scissors.");
+        return "computer";
     }
     if (userSelection === "scissors" && computerSelection === "paper") {
         alert("You won! Scissors beats paper.");
+        return "user";
     }
     if (userSelection != "rock" && userSelection != "paper" && userSelection != "scissors") {
         alert("Invalid input.")
+        return "failure";
     }
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+
+    let userScore = 0;
+    let computerScore = 0;
+
+    while (userScore < 3 && computerScore < 3) {
         userPlay();
         computerPlay();
-        playRound();
+        const roundWinner = playRound();
+        if (roundWinner === "user") {
+            userScore++; 
+        }
+        if (roundWinner === "computer") {
+            computerScore++;
+        }
+        console.log("Your Score: " + userScore);
+        console.log("Computer Score: " + computerScore);
     }
 }
 
