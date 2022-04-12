@@ -1,10 +1,10 @@
 let computerSelection;
 
 function computerPlay() {
-    computerSelection = Math.floor((Math.random() * 3) + 1);
-    if (computerSelection == 1) {
+    computerSelection = Math.floor(Math.random() * 3 + 1);
+    if (computerSelection === 1) {
         computerSelection = "rock";
-    } else if (computerSelection == 2) {
+    } else if (computerSelection === 2) {
         computerSelection = "paper";
     } else {
         computerSelection = "scissors";
@@ -25,19 +25,19 @@ userPlay();
 let announcement;
 
 function playRound() {
-    if (userSelection == computerSelection) {
+    if (userSelection === computerSelection) {
         announcement = "It was a tie! You both played the same hand.";
-     } else if (userSelection == "rock" && computerSelection == "paper") {
+     } else if (userSelection === "rock" && computerSelection === "paper") {
         announcement = "You lost! Paper beats rock.";
-    } else if (userSelection == "rock" && computerSelection == "scissors") {
+    } else if (userSelection === "rock" && computerSelection === "scissors") {
         announcement = "You won! Rock beats scissors.";
-    } else if (userSelection == "paper" && computerSelection == "rock") {
+    } else if (userSelection === "paper" && computerSelection === "rock") {
         announcement = "You won! Paper beats rock.";
-    } else if (userSelection == "paper" && computerSelection == "scissors") {
+    } else if (userSelection === "paper" && computerSelection === "scissors") {
         announcement = "You lost! Scissors beats paper.";
-    } else if (userSelection == "scissors" && computerSelection == "rock") {
+    } else if (userSelection === "scissors" && computerSelection === "rock") {
         announcement = "You lost! Rock beats scissors.";
-    } else if (userSelection == "scissors" && computerSelection == "paper") {
+    } else if (userSelection === "scissors" && computerSelection === "paper") {
         announcement = "You won! Scissors beats paper.";
     }
 }
